@@ -262,7 +262,7 @@ ui <- fluidPage(
                    fluidRow(
                      column(
                        width = 6,
-                       wellPanel( #wellpanelis just like class = "well' i think
+                       wellPanel( 
                          h4("cases(votes) selection"),
                          selectInput(
                            inputId = "which_votes_taiwanmap", 
