@@ -33,7 +33,7 @@ server <- function(input, output) {
       labs(x = "cases", y = "cases")
   })
   cases_cluster <- reactive({
-    set.seed(123)
+    set.seed(125)
     kmeans(x = var_position[, 1:2], centers = input$kmeans_clusters, iter.max = 100)
   })
   output$cases_cluster_plot <- renderPlot({
@@ -100,8 +100,8 @@ server <- function(input, output) {
       selected_range_biplot$x <- c(actually_selected_biplot$xmin, actually_selected_biplot$xmax)
       selected_range_biplot$y <- c(actually_selected_biplot$ymin, actually_selected_biplot$ymax)
     }else{
-      selected_range_biplot$x <- NULL
-      selected_range_biplot$y <- NULL
+      selected_range_biplot$x <- c(-7, -2)
+      selected_range_biplot$y <- c(-5, -1)
     }
   })
   
@@ -148,8 +148,8 @@ server <- function(input, output) {
       selected_range_taiwan_plot$x <- c(actually_selected_taiwan_plot$xmin, actually_selected_taiwan_plot$xmax)
       selected_range_taiwan_plot$y <- c(actually_selected_taiwan_plot$ymin, actually_selected_taiwan_plot$ymax)
     }else{
-      selected_range_taiwan_plot$x <- NULL
-      selected_range_taiwan_plot$y <- NULL
+      selected_range_taiwan_plot$x <- c(121.3, 121.9)
+      selected_range_taiwan_plot$y <- c(24.7, 25.3)
     }
   })
   

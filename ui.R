@@ -174,7 +174,7 @@ ui <- fluidPage(
                        h4("The visualized plot is drawn on the basis of the correlation among each cases after conducting PCA"),
                        br(),
                        br(),
-                       sidebarPanel(width = 6,
+                       sidebarPanel(width = 3,
                          numericInput(inputId = "kmeans_clusters", 
                                       label = "number of cluster", 
                                       value = 4, min = 1, max = 10, step = 1)
@@ -262,7 +262,7 @@ ui <- fluidPage(
                    fluidRow(
                      column(
                        width = 6,
-                       wellPanel( 
+                       wellPanel( #wellpanelis just like class = "well' i think
                          h4("cases(votes) selection"),
                          selectInput(
                            inputId = "which_votes_taiwanmap", 
@@ -278,6 +278,7 @@ ui <- fluidPage(
                      column(
                        width = 6, class = "well",
                        h4("supported rate on each district"),
+                       h5("the selected area will be amplified on the right graph"),
                        plotOutput(
                          outputId = "taiwan_plot",
                          brush = brushOpts(id = "selected_area_taiwan_plot")
